@@ -1,0 +1,319 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-api\\microondas-digital-api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-api\\microondas-digital-api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-api\\microondas-digital-api.csproj",
+        "projectName": "microondas-digital-api",
+        "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-api\\microondas-digital-api.csproj",
+        "packagesPath": "C:\\Users\\Natanael Freire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natanael Freire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\microondas-digital-application.csproj": {
+                "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\microondas-digital-application.csproj"
+              },
+              "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj": {
+                "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\microondas-digital-application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\microondas-digital-application.csproj",
+        "projectName": "microondas-digital-application",
+        "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\microondas-digital-application.csproj",
+        "packagesPath": "C:\\Users\\Natanael Freire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natanael Freire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj": {
+                "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj"
+              },
+              "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj": {
+                "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj",
+        "projectName": "microondas-digital-domain",
+        "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj",
+        "packagesPath": "C:\\Users\\Natanael Freire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natanael Freire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj",
+        "projectName": "microondas-digital-infra",
+        "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\microondas-digital-infra.csproj",
+        "packagesPath": "C:\\Users\\Natanael Freire\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Natanael Freire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj": {
+                "projectPath": "C:\\Users\\Natanael Freire\\Desktop\\Experimentos\\MicroondasDigital\\microondas-digital-api\\microondas-digital-domain\\microondas-digital-domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

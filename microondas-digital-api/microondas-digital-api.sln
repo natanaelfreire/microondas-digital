@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microondas-digital-api", "microondas-digital-api\microondas-digital-api.csproj", "{7E54BF72-E34C-4232-9034-9E1CDA369389}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microondas-digital-domain", "microondas-digital-domain\microondas-digital-domain.csproj", "{6716ABEB-6350-45F8-995C-293A29E8CE54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microondas-digital-infra", "microondas-digital-infra\microondas-digital-infra.csproj", "{1F5B56C0-D551-4613-AA68-459318F5EC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "microondas-digital-application", "microondas-digital-application\microondas-digital-application.csproj", "{D5BA6F68-27A8-407E-A67E-9C2F9AFED83A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E54BF72-E34C-4232-9034-9E1CDA369389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E54BF72-E34C-4232-9034-9E1CDA369389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E54BF72-E34C-4232-9034-9E1CDA369389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E54BF72-E34C-4232-9034-9E1CDA369389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6716ABEB-6350-45F8-995C-293A29E8CE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6716ABEB-6350-45F8-995C-293A29E8CE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6716ABEB-6350-45F8-995C-293A29E8CE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6716ABEB-6350-45F8-995C-293A29E8CE54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5B56C0-D551-4613-AA68-459318F5EC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5B56C0-D551-4613-AA68-459318F5EC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5B56C0-D551-4613-AA68-459318F5EC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5B56C0-D551-4613-AA68-459318F5EC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BA6F68-27A8-407E-A67E-9C2F9AFED83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BA6F68-27A8-407E-A67E-9C2F9AFED83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5BA6F68-27A8-407E-A67E-9C2F9AFED83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5BA6F68-27A8-407E-A67E-9C2F9AFED83A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67776911-61C6-464E-9063-2A83ACFDDB00}
+	EndGlobalSection
+EndGlobal

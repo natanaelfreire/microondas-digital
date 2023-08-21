@@ -1,0 +1,17 @@
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-infra.deps.json
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-infra.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-infra.pdb
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-domain.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-domain.pdb
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.csproj.AssemblyReference.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.AssemblyInfoInputs.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.AssemblyInfo.cs
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.csproj.CoreCompileInputs.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.csproj.CopyComplete
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\refint\microondas-digital-infra.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.pdb
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\ref\microondas-digital-infra.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\bin\Debug\net6.0\microondas-digital-infra.runtimeconfig.json
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-infra\obj\Debug\net6.0\microondas-digital-infra.genruntimeconfig.cache

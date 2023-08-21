@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "microondas-digital-domain/1.0.0": {
+        "runtime": {
+          "microondas-digital-domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "microondas-digital-domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

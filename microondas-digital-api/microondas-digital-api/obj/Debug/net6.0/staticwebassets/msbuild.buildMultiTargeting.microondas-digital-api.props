@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\microondas-digital-api.props" />
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\bin\Debug\net6.0\microondas-digital-domain.deps.json
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\bin\Debug\net6.0\microondas-digital-domain.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\bin\Debug\net6.0\microondas-digital-domain.pdb
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.csproj.AssemblyReference.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.AssemblyInfoInputs.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.AssemblyInfo.cs
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.csproj.CoreCompileInputs.cache
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\refint\microondas-digital-domain.dll
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\microondas-digital-domain.pdb
+C:\Users\Natanael Freire\Desktop\Experimentos\MicroondasDigital\microondas-digital-api\microondas-digital-domain\obj\Debug\net6.0\ref\microondas-digital-domain.dll
