@@ -1,17 +1,21 @@
 import { Box } from "@chakra-ui/react";
 import { useMediaQuery } from '@chakra-ui/react'
+import { ProgramasAquecimentoResponse } from "../../types/MicroondasResponse";
 
 type JanelaVidroProps = {
-  feedbackMsg: string;
-  instrucoes: string;
+  programaAquecimentoSelecionadoId: string | null;
+  programasAquecimento: ProgramasAquecimentoResponse[];
   stringInformativa: string;
+  mostrarDetalhes: boolean;
 }
 
 function JanelaVidro({
-  feedbackMsg,
-  instrucoes,
-  stringInformativa
+  programaAquecimentoSelecionadoId,
+  programasAquecimento,
+  stringInformativa,
+  mostrarDetalhes
 }: JanelaVidroProps) {
+  const programaSelecionado = programasAquecimento.find(item => item.id == programaAquecimentoSelecionadoId)
   const [isSmallerThan600] = useMediaQuery('(max-width: 600px)')
   
   const cssProps = isSmallerThan600 ?
@@ -27,6 +31,8 @@ function JanelaVidro({
     fontSize: 14,
    }
 
+   console.log(mostrarDetalhes)
+
   return (
     <Box
       bg='transparent'
@@ -35,10 +41,10 @@ function JanelaVidro({
       {...cssProps}
     >
       {
-        feedbackMsg ? <p>{feedbackMsg}</p> : null
+        programaSelecionado && mostrarDetalhes ? <p>{programaSelecionado.nome} ({programaSelecionado.alimento})</p> : null
       }
       {
-        instrucoes ? <p>{instrucoes}</p> : null
+        programaSelecionado && mostrarDetalhes ? <p>{programaSelecionado.instrucoes}</p> : null
       }
       {
         stringInformativa ? `[ ${stringInformativa}]` : null

@@ -5,17 +5,18 @@ import { Button, Stack, Text } from '@chakra-ui/react'
 import './App.css'
 
 import ButtonNumerico from './ButtonNumerico';
-import retornaMinsSecs from '../retornaMinsSecs.ts'
-import dividirArray from '../dividirArray.ts'
+import dividirArray from './utils/dividirArray.ts'
 import ModalPrograma from './ModalPrograma.tsx';
 
 import { ProgramaAquecimento } from './types/ProgramaAquecimento'
 import { JanelaVidro } from './components/Microondas/JanelaVidro.tsx';
 import AuthContext from './Context/auth.tsx';
 import ModalLogin from './ModalLogin.tsx';
-import { MicroondasResponse, ProgramasAquecimentoResponse, getMiroondasByUser } from './services/getMicroondasByUser.ts';
+import { MicroondasResponse, getMiroondasByUser } from './services/getMicroondasByUser.ts';
 import api from './services/api.ts';
 import { getStorageToken } from './services/getStorageToken.ts';
+import { iniciar } from './services/iniciar.ts';
+import { retornaMinsSecs } from './utils/retornaMinsSecs.ts';
 
 function App() {
   const [inputUser, setInput] = useState('')
@@ -23,7 +24,6 @@ function App() {
   const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null);
   // const [pausado, setPausado] = useState(false);
   // const [programaSelecionado, setProgramaSelecionado] = useState<string | null>(null);
-  const [programasAquecimento, setProgramasAquecimento] = useState<ProgramaAquecimento[]>([])
 
   const [feedbackMsg, setFeedbackMsg] = useState('');
   const [instrucoes, setInstrucoes] = useState('');
@@ -39,39 +39,25 @@ function App() {
     potencia: 10,
     programaAquecimentoSelecionadoId: null,
     programasAquecimento: []
-    
   });
-  
+
   const programas = dividirArray(microondas?.programasAquecimento ?? [], 5)
 
-  // useEffect(() => {
-  //   if (intervalId == null && programaSelecionado != null && pausado == false) {
-  //     const programa = programasAquecimento.find(item => item.id == programaSelecionado);
-
-  //     if (programa != null) {
-  //       setInput(`${programa.minutos}${programa.segundos.toString().padStart(2, '0')}`)
-  //       setPotencia(programa.potencia)
-  //       setFeedbackMsg(programa.nome)
-  //       setInstrucoes(programa.instrucoes)
-  //     }
-  //   }
-
-  // }, [programaSelecionado, intervalId, pausado])
-
-  async function getMicroondas(){
+  async function getMicroondas() {
     const response = await getMiroondasByUser()
 
     if (response != null) {
       setMicroondas(response);
 
-      if (response.horaInicio != null && response.horaPausa == null)
+      if (response.horaInicio != null && response.horaPausa == null) {
         await configuraTick()
+      }
     }
   }
 
   useEffect(() => {
     getMicroondas()
-    
+
     document.addEventListener('keydown', (event) => {
       if (event.key == 'Backspace') {
         clickApagaNumero()
@@ -80,8 +66,19 @@ function App() {
 
       const num = parseInt(event.key)
 
-      if (inputUser.length < 4 && !isNaN(num))
-        setInput(prev => parseInt(prev + num).toString())
+      if (!isNaN(num)) {
+        setMicroondas(prev => {
+          const { minutos, segundos } = retornaMinsSecs(num.toString(), prev.minutos, prev.segundos)
+
+          const novoMicroondas: MicroondasResponse = {
+            ...prev,
+            minutos: minutos,
+            segundos: segundos
+          }
+
+          return novoMicroondas
+        })
+      }
     })
   }, [])
 
@@ -105,7 +102,7 @@ function App() {
     if (microondas?.programaAquecimentoSelecionadoId == null) {
       if (microondas?.potencia === 10)
         setMicroondas(prev => {
-          const novoMicroondas : MicroondasResponse = {
+          const novoMicroondas: MicroondasResponse = {
             ...prev,
             potencia: 1,
           }
@@ -114,7 +111,7 @@ function App() {
         })
       else
         setMicroondas(prev => {
-          const novoMicroondas : MicroondasResponse = {
+          const novoMicroondas: MicroondasResponse = {
             ...prev,
             potencia: prev.potencia + 1,
           }
@@ -125,55 +122,57 @@ function App() {
   }
 
   function clickApagaNumero() {
-    if (microondas.programaAquecimentoSelecionadoId == null)
-      setInput(prev => prev.slice(0, prev.length - 1))
+    if (microondas.programaAquecimentoSelecionadoId == null) {
+      setMicroondas(prev => {
+        const { minutos, segundos } = retornaMinsSecs('', prev.minutos, prev.segundos)
+
+        const novoMicroondas: MicroondasResponse = {
+          ...prev,
+          minutos: minutos,
+          segundos: segundos
+        }
+
+        return novoMicroondas
+      })
+    }
   }
 
   async function iniciarAquecimento() {
-    const token = getStorageToken()
-    const response = await api.post<MicroondasResponse>('microondas/iniciar', {
-      "potencia": microondas.potencia,
-      "minutos": microondas.minutos,
-      "segundos": microondas.segundos,
-      "programaAquecimentoId": null
-    }, {
-      headers: {
-        Authorization: token
-      }
+    const response = await iniciar({
+      minutos: microondas.minutos,
+      segundos: microondas.segundos,
+      potencia: microondas.potencia,
+      programaAquecimentoId: microondas.programaAquecimentoSelecionadoId
     })
 
-    console.log(response.data)
-
-    if (response.data != null && response.status == 200) {
-      setMicroondas(response.data)
+    if (response != null) {
+      setMicroondas(response)
       await configuraTick()
     }
-    else if (response.status == 400) {
-      alert(response.data)
+    else {
       clearInterval(intervalId ?? 0)
+      setIntervalId(null)
     }
-    else
-      clearInterval(intervalId ?? 0)
   }
 
   async function configuraTick() {
     if (intervalId != null)
-        clearInterval(intervalId)
+      clearInterval(intervalId)
 
-      const id = setInterval(async () => {
-        const token = getStorageToken()
-        const microodasTick = await api.get<MicroondasResponse>('microondas/tick', {
-          headers: {
-            Authorization: token
-          }
-        })
+    const id = setInterval(async () => {
+      const token = getStorageToken()
+      const microodasTick = await api.get<MicroondasResponse>('microondas/tick', {
+        headers: {
+          Authorization: token
+        }
+      })
 
-        setMicroondas(microodasTick.data)
+      setMicroondas(microodasTick.data)
 
-        if (microodasTick.data.horaInicio == null && microodasTick.data.horaPausa == null) clearInterval(id)
-      }, 1000)
+      if (microodasTick.data.horaInicio == null && microodasTick.data.horaPausa == null) clearInterval(id)
+    }, 1000)
 
-      setIntervalId(id)
+    setIntervalId(id)
   }
 
   async function pararAquecimento() {
@@ -186,21 +185,23 @@ function App() {
 
     setMicroondas(response.data)
     clearInterval(intervalId ?? 0)
+    setIntervalId(null)
   }
 
   return (
     <>
       <Stack align='center' direction='row' mb={4}>
-        <ModalPrograma arrayOriginal={programasAquecimento} setArryOriginal={setProgramasAquecimento} />
+        <ModalPrograma carregaProgramasAquecimento={getMicroondas} />
         {
           signed ? <Text color='white'>Olá, {user}</Text> : <ModalLogin />
-        }        
+        }
       </Stack>
       <div className='microondas-container'>
         <JanelaVidro
-          feedbackMsg={feedbackMsg}
-          instrucoes={instrucoes}
+          programaAquecimentoSelecionadoId={microondas.programaAquecimentoSelecionadoId}
+          programasAquecimento={microondas.programasAquecimento}
           stringInformativa={stringInformativa}
+          mostrarDetalhes={microondas.horaInicio == null}
         />
         <div className='painel'>
           <div className='painel-display'>
@@ -237,18 +238,22 @@ function App() {
                   return (
                     <Stack spacing={1} key={idx} display='flex' direction='row' paddingLeft={2} paddingRight={2} paddingTop={1} paddingBottom={1} border='1px solid #fff'>
                       {arrayProgramas.map((item, i) => <Button width='20%' colorScheme='blue' size='xs' color='black' key={i} onClick={() => {
-                        if (intervalId == null && microondas.horaPausa != null) setMicroondas(prev => {
-                          const novoMicroondas : MicroondasResponse = {
-                            ...prev,
-                            programaAquecimentoSelecionadoId: item.id,
-                          }
-                
-                          return novoMicroondas;
-                        })
+                        if (intervalId == null && microondas.horaPausa == null)
+                          setMicroondas(prev => {
+                            const novoMicroondas: MicroondasResponse = {
+                              ...prev,
+                              programaAquecimentoSelecionadoId: item.id,
+                              potencia: item.potencia,
+                              minutos: item.minutos,
+                              segundos: item.segundos,
+                            }
+
+                            return novoMicroondas;
+                          })
                       }}>
                         <small>
                           {
-                            item.caractere != null ?
+                            item.caractere != '.' ?
                               <i>{item.nome.split(' ')[0]}</i> :
                               item.nome.split(' ')[0]
                           }

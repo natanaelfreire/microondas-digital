@@ -1,5 +1,6 @@
 import { SetStateAction } from "react";
 import { MicroondasResponse } from "./services/getMicroondasByUser";
+import { retornaMinsSecs } from "./utils/retornaMinsSecs";
 
 type ButtonNumericoProps = {
   num: string;
@@ -9,30 +10,12 @@ type ButtonNumericoProps = {
 function ButtonNumerico(props: ButtonNumericoProps) {
   function clickNumero(num: string) {
     props.setInput(prev => {
-      const display = `${prev.minutos}${prev.segundos.toString().padStart(2, '0')}` + num
-      // console.log(parseInt(display).toString())
-      if (parseInt(display).toString().length > 4)
-        return prev;
-
-      let mins = ''
-      let secs = ''
-      
-      if (display.length === 4) {
-        mins = display.slice(0, 2) ? display.slice(0, 2) : '0'
-        secs = display.slice(2, 4) ? display.slice(2, 4) : '0'
-      } 
-      else if (display.length === 3) {
-        mins = display.slice(0, 1) ? display.slice(0, 1) : '0'
-        secs = display.slice(1, 3) ? display.slice(1, 3) : '0'
-      }
-      else if (display.length < 3) {
-        secs = display
-      }
+      const { minutos, segundos } = retornaMinsSecs(num, prev.minutos, prev.segundos)
       
       const novoMicroondas : MicroondasResponse = {
         ...prev,
-        minutos: parseInt(mins),
-        segundos: parseInt(secs)
+        minutos: minutos,
+        segundos: segundos
       }
 
       return novoMicroondas

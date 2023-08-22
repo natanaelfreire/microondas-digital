@@ -1,13 +1,12 @@
 import api from "./api";
 
 type LoginResponse = {
-  "id": string
-  "nome": string
-  "token": string
+  id: string
+  nome: string
+  token: string
 }
 
 function setToken(response : LoginResponse) {
-  console.log(response)
   localStorage.setItem("SavedTokenMicroondas", 'Bearer ' + response.token);
   localStorage.setItem("SavedUserMicroondas", response.nome);
   api.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;

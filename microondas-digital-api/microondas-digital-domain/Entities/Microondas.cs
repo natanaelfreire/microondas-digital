@@ -13,12 +13,12 @@ namespace microondas_digital_domain.Entities
         public List<ProgramaAquecimento> ProgramasAquecimento { get; set; }
         public char Caractere { get; set; } = '.';
 
-        public Microondas(int minutos, int segundos, int potencia = 10, DateTime? horaInicio = null, DateTime? horaPausa = null)
+        public Microondas(int minutos, int segundos, int potencia = 10, DateTime? horaInicio = null, DateTime? horaPausa = null, string programaAquecimentoSelecionadoId = null)
         {
-            ValidaMicroondas(minutos, segundos, potencia, horaInicio, horaPausa);
+            ValidaMicroondas(minutos, segundos, potencia, horaInicio, horaPausa, programaAquecimentoSelecionadoId);
         }
 
-        private void ValidaMicroondas(int minutos, int segundos, int potencia = 10, DateTime? horaInicio = null, DateTime? horaPausa = null)
+        private void ValidaMicroondas(int minutos, int segundos, int potencia = 10, DateTime? horaInicio = null, DateTime? horaPausa = null, string programaAquecimentoSelecionadoId = null)
         {
             MicroondasDomainException.When(minutos < 0 || minutos > 59, "Minutos deve ser entre 0 e 59");
             MicroondasDomainException.When(segundos < 0 || minutos > 59, "Segundos deve ser entre 0 e 59");
@@ -29,6 +29,7 @@ namespace microondas_digital_domain.Entities
             Potencia = potencia;
             HoraInicio = horaInicio;
             HoraPausa = horaPausa;
+            ProgramaAquecimentoSelecionadoId = programaAquecimentoSelecionadoId;
         }
 
         public void Iniciar(int minutos, int segundos, int potencia)
@@ -59,6 +60,7 @@ namespace microondas_digital_domain.Entities
             HoraInicio = DateTime.Now;
             HoraPausa = null;
             Caractere = '.';
+            ProgramaAquecimentoSelecionadoId = null;
         }
 
         public void Iniciar(string programaAquecimentoId)

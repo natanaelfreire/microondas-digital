@@ -73,6 +73,7 @@ namespace microondas_digital_application.Services.MicroondasService
             var microondas = await _microondasRepository.FindByUserId(userId);
             microondas.ProgramasAquecimento = await GetProgramasAquecimentoByUserId(userId);
             microondas.Parar();
+
             await _microondasRepository.Update(microondas, userId);
 
             return microondas;
@@ -83,6 +84,7 @@ namespace microondas_digital_application.Services.MicroondasService
             var microondas = await _microondasRepository.FindByUserId(userId);
             microondas.ProgramasAquecimento = await GetProgramasAquecimentoByUserId(userId);
             microondas.Tick();
+
             await _microondasRepository.Update(microondas, userId);
 
             return microondas;

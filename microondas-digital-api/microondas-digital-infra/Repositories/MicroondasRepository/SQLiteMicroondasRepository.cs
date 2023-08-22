@@ -24,6 +24,7 @@ namespace microondas_digital_infra.Repositories.MicroondasRepository
                 UsuarioId = userId,
                 HoraInicio = null,
                 HoraPausa = null,
+                ProgramaAquecimentoSelecionadoId = null
             };
 
             _context.Microondas.Add(dbMicroondas);
@@ -62,14 +63,14 @@ namespace microondas_digital_infra.Repositories.MicroondasRepository
             if (dbMicroondas == null)
                 dbMicroondas = await CreateDefault(userId);
 
-            return new Microondas(dbMicroondas.Minutos, dbMicroondas.Segundos, dbMicroondas.Potencia, dbMicroondas.HoraInicio, dbMicroondas.HoraPausa);
+            return new Microondas(dbMicroondas.Minutos, dbMicroondas.Segundos, dbMicroondas.Potencia, dbMicroondas.HoraInicio, dbMicroondas.HoraPausa, dbMicroondas.ProgramaAquecimentoSelecionadoId);
         }
 
         public async Task<ProgramaAquecimento> GetProgramaAquecimentoById(string programaAquecimentoId)
         {
             return await _context.ProgramaAquecimento
                             .Where(x => x.Id == programaAquecimentoId)
-                            .Select(x => new ProgramaAquecimento(x.Nome, x.Alimento, x.Minutos, x.Segundos, x.Potencia, x.Instrucoes, x.Caractere))
+                            .Select(x => new ProgramaAquecimento(x.Id, x.Nome, x.Alimento, x.Minutos, x.Segundos, x.Potencia, x.Instrucoes, x.Caractere))
                             .FirstOrDefaultAsync();
         }
 
@@ -79,7 +80,7 @@ namespace microondas_digital_infra.Repositories.MicroondasRepository
                                         .Where(x => x.UsuarioId == userId)
                                         .ToListAsync();
 
-            return DbProgramas.Select(x => new ProgramaAquecimento(x.Nome, x.Alimento, x.Minutos, x.Segundos, x.Potencia, x.Instrucoes, x.Caractere)).ToList();
+            return DbProgramas.Select(x => new ProgramaAquecimento(x.Id, x.Nome, x.Alimento, x.Minutos, x.Segundos, x.Potencia, x.Instrucoes, x.Caractere)).ToList();
         }
 
         public async Task<bool> Update(Microondas microondas, string userId)
@@ -94,6 +95,7 @@ namespace microondas_digital_infra.Repositories.MicroondasRepository
             dbMicroondas.Potencia = microondas.Potencia;
             dbMicroondas.HoraInicio = microondas.HoraInicio;
             dbMicroondas.HoraPausa = microondas.HoraPausa;
+            dbMicroondas.ProgramaAquecimentoSelecionadoId = microondas.ProgramaAquecimentoSelecionadoId;
 
             await _context.SaveChangesAsync();
 

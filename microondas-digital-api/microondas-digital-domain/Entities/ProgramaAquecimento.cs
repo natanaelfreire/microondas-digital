@@ -13,7 +13,17 @@ namespace microondas_digital_domain.Entities
         public string Instrucoes { get; private set; } = string.Empty;
         public char? Caractere { get; private set; }
 
-        public ProgramaAquecimento() { }
+        public ProgramaAquecimento(string id, string nome, string alimento, int minutos, int segundos, int potencia, string instrucoes, char? caractere)
+        {
+            Id = id;
+            Nome = nome;
+            Alimento = alimento;
+            Minutos = minutos;
+            Segundos = segundos;
+            Potencia = potencia;
+            Instrucoes = instrucoes;
+            Caractere = caractere;
+        }
 
         public ProgramaAquecimento(string nome, string alimento, int minutos, int segundos, int potencia, string instrucoes, char? caractere)
         {

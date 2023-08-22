@@ -27,5 +27,8 @@ namespace microondas_digital_infra.EntitiesConfiguration
 
         [Column("id_usuario")]
         public string UsuarioId { get; set; }
+
+        [Column("id_programa_aquecimento_selecionado")]
+        public string ProgramaAquecimentoSelecionadoId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-import { ProgramasAquecimentoResponse } from './src/services/getMicroondasByUser';
+import { ProgramasAquecimentoResponse } from '../services/getMicroondasByUser';
 
 export default function dividirArray(arrayOriginal: Array<ProgramasAquecimentoResponse>, tamanho: number) {
   const arraysMenores : ProgramasAquecimentoResponse[][] = []

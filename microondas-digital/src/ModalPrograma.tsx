@@ -1,12 +1,12 @@
 import { Button, FormControl, FormLabel, Grid, GridItem, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react"
-import React, { SetStateAction, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 
-import { ProgramaAquecimento } from './types/ProgramaAquecimento'
 import { Plus } from "@phosphor-icons/react";
+import { ProgramasAquecimentoResponse } from "./types/MicroondasResponse";
+import { criarProgramaAquecimento } from "./services/criarProgramaAquecimento";
 
 type ModalProgramaProps = {
-  arrayOriginal: Array<ProgramaAquecimento>,
-  setArryOriginal: React.Dispatch<SetStateAction<ProgramaAquecimento[]>>;
+  carregaProgramasAquecimento: () => Promise<void>
 }
 
 export default function ModalPrograma(props: ModalProgramaProps) {
@@ -32,78 +32,23 @@ export default function ModalPrograma(props: ModalProgramaProps) {
     setInstrucoes('')
   }, [])
 
-  function salvarPrograma() {
-    if (props.arrayOriginal.length == 10) {
-      alert('Limite máximo de programas de aquecimento atingido! 10')
-      return
-    }
-    
-    if (!nome) {
-      alert('Preencha o nome');
-      return
-    }
-    
-    if (!alimento) {
-      alert('Preencha o alimento')
-      return
-    }
-
-    if (potencia < 1 || potencia > 10) {
-      alert('Valor da potência deve ser entre 1 a 10')
-      return
-    }
-
-    if (!character) {
-      alert('Preencha o character')
-      return
-    }
-    else if (character.length > 1) {
-      alert('Character deve conter apenas 1 letra')
-      return
-    }
-
-    if (minutos >= 60) {
-      alert('Minutos excede o limite máximo de 59min');
-      return
-    }
-    else if (minutos < 0) {
-      alert('Minutos não pode ser negativo');
-      return
-    }
-
-    if (segundos >= 60) {
-      alert('Segundo excede o limite máximo de 59secs')
-      return
-    }
-    else if (segundos < 0) {
-      alert('Segundos não pode ser negativo');
-      return
-    }
-
-    if ((segundos + minutos) == 0) {
-      alert('Preencha algum tempo para o aquecimento')
-      return
-    }
-
-    const validaCaractere = props.arrayOriginal.find(item => item.caractere == character);
-
-    if (validaCaractere != null) {
-      alert('Caractere já está em uso');
-      return
-    }
-
-    const obj : ProgramaAquecimento = {
-      id: props.arrayOriginal.length + 1,
+  async function salvarPrograma() {
+    const obj : Omit<ProgramasAquecimentoResponse, "id"> = {
       alimento: alimento,
       instrucoes: instrucoes,
       nome: nome,
       potencia: potencia,
-      tempo: `${minutos}${segundos.toString().padStart(2, '0')}`,
-      caractere: character
+      minutos: minutos,
+      segundos: segundos,
+      caractere: character ? character : '.',
     }
 
-    props.setArryOriginal(prev => [...prev, obj])
-    onClose()
+    const response = await criarProgramaAquecimento(obj)
+
+    if (response == true) {
+      await props.carregaProgramasAquecimento()
+      onClose()
+    }
   }
 
   return (

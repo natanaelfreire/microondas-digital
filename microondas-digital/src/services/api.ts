@@ -16,9 +16,13 @@ api.interceptors.response.use(response => {
     api.defaults.headers.common['Authorization'] = '';
     localStorage.removeItem("SavedTokenMicroondas");
     localStorage.removeItem("SavedUserMicroondas");
+
+    return
   }
-  else if (!error.response)
+  else if (!error.response) {
     alert('Erro na conexão com o servidor')
+    return
+  }
 
   return error;
 })
